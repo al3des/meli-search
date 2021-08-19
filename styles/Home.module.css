@@ -38,7 +38,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  /* color: #0070f3; */
   text-decoration: none;
 }
 
@@ -97,8 +97,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  /* color: #0070f3; */
+  /* border-color: #0070f3; */
 }
 
 .card h3 {
@@ -121,4 +121,17 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.pill {
+  background-color: #f8beed;
+  color:#3f2f47;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
 }

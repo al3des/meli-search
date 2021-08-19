@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #3f2f47;
+    color:#f8beed;
 }
 
 a {
@@ -18,3 +20,9 @@ a {
 .bold {
   font-weight: bold;
 }
+
+.color1 {color: #3f2f47;}
+.color2 {color: #604068;}
+.color3 {color: #916391;}
+.color4 {color: #d98dcd;}
+.color5 {color: #f8beed;}

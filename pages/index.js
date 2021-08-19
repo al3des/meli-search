@@ -35,6 +35,7 @@ export default function Home() {
   }, [search])
 
   useEffect(() => {
+    setQuestions([])
     const wQ =
       results &&
       results.map((e) => {
@@ -48,6 +49,7 @@ export default function Home() {
   }, [results])
 
   useEffect(() => {
+    setDescriptions([])
     results &&
       results.map((e) =>
         axios.get(`${url}/items?ids=${e.id}/description`).then((res) => {
@@ -62,7 +64,7 @@ export default function Home() {
   console.log(questions)
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} `}>
       <button onClick={() => setSearch("rx480 8gb")}>RX 480 8GB</button>
       <button onClick={() => setSearch("rx580 8gb")}>RX 580 8GB</button>
       <button onClick={() => setSearch("rx570 8gb")}>RX 570 8GB</button>
@@ -76,13 +78,16 @@ export default function Home() {
             </a>
             <Image src={p.thumbnail} height={200} width={200} />
             <p>$ {p.price.toLocaleString("en-US")}</p>
+              <adddress>{p.address.state_name}, {p.address.city_name}</adddress>
+              {p.shipping.free_shipping && <div className={styles.pill}>envio gratis</div>}
+              {p.accepts_mercadopago && <div className={styles.pill}>acepta mercado pago</div>}
             <p>
               {descriptions &&
                 descriptions
                   .filter((d) => d.item_id == p.id)
                   .map((e) => e.description)}
             </p>
-            <div>
+            <div className={styles.accordion}>
               {questions &&
                 getQuestions(p.id, questions).map((q) =>
                   q.map((q) => (
